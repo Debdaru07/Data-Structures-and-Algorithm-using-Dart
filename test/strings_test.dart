@@ -1,3 +1,4 @@
+import 'package:dsa_dart/strings/longest_unique_substring.dart';
 import 'package:test/test.dart';
 import '../lib/strings/first_non_repeating_char.dart';
 
@@ -24,6 +25,51 @@ void main() {
     test('handles mixed characters', () {
       expect(firstNonRepeatingCharacter("aabbcdd"), 4);
       expect(firstNonRepeatingCharacter("abcabcde"), 6);
+    });
+  });
+
+  group('Longest Unique Substring Tests', () {
+    test('Empty string', () {
+      expect(longestUniqueSubstring(""), 0);
+    });
+
+    test('Single character', () {
+      expect(longestUniqueSubstring("a"), 1);
+    });
+
+    test('All characters same', () {
+      expect(longestUniqueSubstring("bbbb"), 1);
+    });
+
+    test('All characters unique', () {
+      expect(longestUniqueSubstring("abcdef"), 6);
+    });
+
+    test('Repeating pattern', () {
+      expect(longestUniqueSubstring("abcabcbb"), 3);
+    });
+
+    test('Mid-string longest window', () {
+      expect(longestUniqueSubstring("pwwkew"), 3);
+    });
+
+    test('Overlapping duplicates', () {
+      expect(longestUniqueSubstring("dvdf"), 3);
+    });
+
+    test('Spaces included as characters', () {
+      expect(longestUniqueSubstring("a b c a"), 3);
+    });
+
+    test('Special characters', () {
+      expect(longestUniqueSubstring("!@#!@"), 3);
+    });
+
+    test('Long realistic input', () {
+      expect(
+        longestUniqueSubstring("abcdeafghijaklmnop"),
+        12,
+      );
     });
   });
 }
