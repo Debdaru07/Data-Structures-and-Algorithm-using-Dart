@@ -39,12 +39,7 @@
   - O(1), since we reverse in-place  
 */
 
-class ListNode {
-  int value;
-  ListNode? next;
-
-  ListNode(this.value, [this.next]);
-}
+import '../common/list_node.dart';
 
 ListNode? reverseLinkedList(ListNode? head) {
   ListNode? prev = null;
